@@ -3,15 +3,7 @@ require 'sqlite3'
 require 'rubygems'
 require 'fileutils'
 require 'optparse'
-
-#displaying rows to debug/log
-def display_rows rows
-  rows.each do |row|
-    puts row.to_s
-  end
-  puts ''
-end
-
+require_relative "pre_build.rb"
 
 #get the parameter which is the name of the app
 options = {}
@@ -54,13 +46,11 @@ if (File.exist?(path))
         if (isLine(text[i]))
 
           #if line match a row (function return boolean)
-          if ()
+          if (compareLine(text[i]))
             #modify the value
             modifiyLine(text[i])
 
             #else dont touch
-          else
-
           end
         end #endif
 
@@ -70,12 +60,4 @@ if (File.exist?(path))
 
   end #endif
 
-end
-
-def isLine str
-
-end
-
-def modifyLine str
-  
 end
